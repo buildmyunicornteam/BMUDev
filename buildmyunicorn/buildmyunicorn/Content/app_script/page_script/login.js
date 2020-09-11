@@ -9,7 +9,7 @@ $("#loginform").submit(function (e) {
     $.ajax({
         url: GetBaseURL() + "/Login/ValidateUser",
         method: "POST",
-        data: $('#frm_Login').serialize(),
+        data: $('#loginform').serialize(),
         success: function (response) {
             if (response == "OK") {
                 window.location.replace(GetBaseURL() + "/Dashboard");
