@@ -1,0 +1,59 @@
+﻿
+@using BuildMyUnicorn.Models;
+@model BuildMyUnicorn.Models.Idea
+
+@section PageStyle
+{
+    <link href="~/assets/node_modules/wizard/steps.css" rel="stylesheet">
+    <!--alerts CSS -->
+    <link href="~/assets/node_modules/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+}
+
+
+
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h4 class="text-themecolor">Idea</h4>
+    </div>
+    <div class="col-md-7 align-self-center text-right">
+        <div class="d-flex justify-content-end align-items-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Get the idea out of my head </li>
+            </ol>
+
+            @if (!@ViewBag.IsEdit)
+            {
+                <button type="button" class="btn btn-info d-none d-lg-block m-l-15 JsUpdateIdea"> Update Idea</button>
+
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+    @{
+        if (@ViewBag.IsEdit) { Html.RenderAction("Create", "Idea"); }
+        else { Html.RenderAction("Detail", "Idea"); }
+        //Html.RenderAction("Create", "Idea");
+        // Html.RenderAction("Detail", "Idea");
+    }
+
+
+
+
+
+
+
+@section PageScript
+{
+    <!-- This Page JS -->
+    <script src="~/assets/node_modules/wizard/jquery.steps.min.js"></script>
+    <script src="~/assets/node_modules/wizard/jquery.validate.min.js"></script>
+    <script src="~/assets/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="~/Content/app_script/page_script/idea.js?version=@DateTime.Now"></script>
+
+}
