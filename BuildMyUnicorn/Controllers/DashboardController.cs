@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using BuildMyUnicorn.Business_Layer;
+using Model_Layer.Models;
 
 namespace BuildMyUnicorn.Controllers
 {
@@ -13,6 +11,11 @@ namespace BuildMyUnicorn.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult GetClientIdeaProgressData()
+        {
+            return Json(new Dashboard().GetIdeaProgressData(), JsonRequestBehavior.AllowGet);
         }
     }
 }

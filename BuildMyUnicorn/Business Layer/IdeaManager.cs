@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using BuildMyUnicorn.Models;
+using Model_Layer.Models;
 using System.Data;
 using System.Configuration;
 
@@ -18,6 +18,7 @@ namespace BuildMyUnicorn.Business_Layer
                 new ParametersCollection { ParamterName = "@IdeaID", ParamterValue = Guid.NewGuid(), ParamterType = DbType.Guid, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@IdeaExplain", ParamterValue = Model.IdeaExplain, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ProgressValue", ParamterValue = Model.ProgressValue, ParamterType = DbType.Decimal, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@StartupType", ParamterValue = Model.IdeaBreakDown.StartupType, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@StartupTechnology", ParamterValue = Model.IdeaBreakDown.StartupTechnology, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@ProblemSolve", ParamterValue = Model.IdeaBreakDown.ProblemSolve, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
@@ -28,6 +29,7 @@ namespace BuildMyUnicorn.Business_Layer
                 new ParametersCollection { ParamterName = "@Niche", ParamterValue = Model.IdeaBreakDown.Niche, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@InMarketAlready", ParamterValue = Model.IdeaBreakDown.InMarketAlready, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@SpaceExist", ParamterValue = Model.IdeaBreakDown.SpaceExist, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@Scalable", ParamterValue = Model.IdeaBreakDown.Scalable, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@Entrepreneur", ParamterValue = Model.AboutYou.Entrepreneur, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@EndGoal", ParamterValue = Model.AboutYou.EndGoal, ParamterType = DbType.Int16, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@Experience", ParamterValue = Model.AboutYou.Experience, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
@@ -71,6 +73,7 @@ namespace BuildMyUnicorn.Business_Layer
                 new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@IdeaExplain", ParamterValue = Model.IdeaExplain, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@StartupType", ParamterValue = Model.IdeaBreakDown.StartupType, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ProgressValue", ParamterValue = Model.ProgressValue, ParamterType = DbType.Decimal, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@StartupTechnology", ParamterValue = Model.IdeaBreakDown.StartupTechnology, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@ProblemSolve", ParamterValue = Model.IdeaBreakDown.ProblemSolve, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@ProblemSolver", ParamterValue = Model.IdeaBreakDown.ProblemSolver, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
@@ -81,6 +84,7 @@ namespace BuildMyUnicorn.Business_Layer
                 new ParametersCollection { ParamterName = "@InMarketAlready", ParamterValue = Model.IdeaBreakDown.InMarketAlready, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@SpaceExist", ParamterValue = Model.IdeaBreakDown.SpaceExist, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@Entrepreneur", ParamterValue = Model.AboutYou.Entrepreneur, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@Scalable", ParamterValue = Model.IdeaBreakDown.Scalable, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@EndGoal", ParamterValue = Model.AboutYou.EndGoal, ParamterType = DbType.Int16, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@Experience", ParamterValue = Model.AboutYou.Experience, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
                 new ParametersCollection { ParamterName = "@YearsDoing", ParamterValue = Model.AboutYou.YearsDoing, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },

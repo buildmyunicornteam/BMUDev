@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using ALMS_DAL;
-using BuildMyUnicorn.Models;
+using Model_Layer.Models;
 
 namespace BuildMyUnicorn.Business_Layer
 {

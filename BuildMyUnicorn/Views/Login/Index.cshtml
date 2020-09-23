@@ -20,42 +20,8 @@
     <link href="~/dist/css/pages/login-register-lock.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="~/dist/css/style.min.css" rel="stylesheet">
-
-    <style>
-        input.parsley-success,
-        select.parsley-success,
-        textarea.parsley-success {
-            color: #468847;
-            background-color: #DFF0D8;
-            border: 1px solid #D6E9C6;
-        }
-
-        input.parsley-error,
-        select.parsley-error,
-        textarea.parsley-error {
-            color: #B94A48;
-            background-color: #F2DEDE;
-            border: 1px solid #EED3D7;
-        }
-
-        .parsley-errors-list {
-            margin: 2px 0 3px;
-            padding: 0;
-            list-style-type: none;
-            font-size: 0.9em;
-            line-height: 0.9em;
-            opacity: 0;
-            color: #B94A48;
-            transition: all .3s ease-in;
-            -o-transition: all .3s ease-in;
-            -moz-transition: all .3s ease-in;
-            -webkit-transition: all .3s ease-in;
-        }
-
-            .parsley-errors-list.filled {
-                opacity: 1;
-            }
-    </style>
+    <link href="~/dist/css/custom-style.css" rel="stylesheet" />
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -89,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input type="password" class="form-control" name="Password" data-parsley-required="true" data-parsley-required-message="Please enter password"/>
+                            <input type="password" class="form-control" name="Password" data-parsley-required="true" data-parsley-required-message="Please enter password" autocomplete="off"/>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -156,7 +122,7 @@
     <script src="~/assets/node_modules/popper/popper.min.js"></script>
     <script src="~/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/Content/app_script/parsley.js"></script>
-    <script src="~/Content/app_script/page_script/login.js?version=@DateTime.Now"></script>
+     <script src="~/Content/app_script/page_script/login.js?version=@DateTime.Now"></script>
     <!--Custom JavaScript -->
     <script type="text/javascript">
         $(function () {

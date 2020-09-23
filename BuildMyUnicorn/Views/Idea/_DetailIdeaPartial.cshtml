@@ -1,10 +1,11 @@
-﻿@using BuildMyUnicorn.Models;
-@model BuildMyUnicorn.Models.Idea
+﻿@using Model_Layer.Models;
+@model Model_Layer.Models.Idea
 <div class="row">
-    <div class="col-12">
+
+    <div class="col-7">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Faqs with accordion</h4>
+                @*<h4 class="card-title">Faqs with accordion</h4>*@
                 <h6 class="card-subtitle"></h6>
                 <div id="accordion1" role="tablist" aria-multiselectable="true">
                     <div class="card m-b-0">
@@ -20,10 +21,10 @@
 
                                 <form class="form-material m-t-40">
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What is your idea, try to explain as simply as possible</h5>
+                                        <h5>What is your idea, try to explain as simply as possible</h5>
                                         <textarea class="form-control form-control-line detailtextarea" id="IdeaExplain" name="IdeaExplain" readonly>@Model.IdeaExplain</textarea>
                                         <input type="hidden" id="IdeaID" value="@Model.IdeaID" />
-                                 
+
 
                                     </div>
                                 </form>
@@ -50,20 +51,20 @@
                                             <label>What technology will this start-up use </label>
                                             @foreach (var item in ViewBag.MasterTechnology)
                                             {
-                                                if (!Array.Exists(arrayStartupType, x => x == Convert.ToString(@item.ID)) == true)
+                                                if (Array.Exists(arrayStartupType, x => x == Convert.ToString(@item.ID)) == true)
                                                 {<div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
                                                         <label for="square-radio-disabled">@item.Value</label>
                                                     </div>
                                                 }
 
-                                                else
-                                                {
-                                                    <div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                                                        <label for="square-radio-disabled-checked">@item.Value</label>
-                                                    </div>
-                                                }
+                                                @*else
+                                                    {
+                                                        <div class="custom-control custom-checkbox">
+                                                            <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <label for="square-radio-disabled-checked">@item.Value</label>
+                                                        </div>
+                                                    }*@
 
 
 
@@ -76,20 +77,20 @@
                                             <label>What technology will this start-up use </label>
                                             @foreach (var item in ViewBag.MasterTechnology)
                                             {
-                                                if (!Array.Exists(arrayStartupTechnology, x => x == Convert.ToString(@item.ID)) == true)
+                                                if (Array.Exists(arrayStartupTechnology, x => x == Convert.ToString(@item.ID)) == true)
                                                 {<div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
                                                         <label for="square-radio-disabled">@item.Value</label>
                                                     </div>
                                                 }
 
-                                                else
-                                                {
-                                                    <div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                                                        <label for="square-radio-disabled-checked">@item.Value</label>
-                                                    </div>
-                                                }
+                                                @*else
+                                                    {
+                                                        <div class="custom-control custom-checkbox">
+                                                            <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <label for="square-radio-disabled-checked">@item.Value</label>
+                                                        </div>
+                                                    }*@
 
 
 
@@ -98,47 +99,47 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What problem will this solve </h5>
+                                        <h5>What problem will this solve </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.ProblemSolve</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Who are you solving the problem for </h5>
+                                        <h5>Who are you solving the problem for </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.ProblemSolver</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What feedback have you received about your idea </h5>
+                                        <h5>What feedback have you received about your idea </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.FeedBackReceived</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Who was the feedback from </h5>
+                                        <h5>Who was the feedback from </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.FeedBackFrom</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Is there a demand for your product? </h5>
+                                        <h5> Is there a demand for your product? </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.FeedBackFrom</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Do you have a niche if so what is it </h5>
+                                        <h5>Do you have a niche if so what is it </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.Niche</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Is there something on the market already </h5>
+                                        <h5>Is there something on the market already </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.Niche</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Who already exists in this space </h5>
+                                        <h5>Who already exists in this space </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.SpaceExist</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Is it scalable - If you got 100 customers on launch and 1000 the following week, could you handle it </h5>
+                                        <h5>Is it scalable - If you got 100 customers on launch and 1000 the following week, could you handle it </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaBreakDown.Niche</textarea>
 
                                     </div>
@@ -163,27 +164,27 @@
                             <div class="card-body">
                                 <form class="form-material m-t-40">
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Why do you want to become an entrepreneur</h5>
+                                        <h5>Why do you want to become an entrepreneur</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.Entrepreneur</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Can you see yourself doing this for years </h5>
+                                        <h5>Can you see yourself doing this for years </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.YearsDoing</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What is your experience why are you the person to make this a reality </h5>
+                                        <h5>What is your experience why are you the person to make this a reality </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.Experience</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What are your priorities in life </h5>
+                                        <h5>What are your priorities in life </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.AboutYou.Priorities</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What is the end goal </h5>
+                                        <h5> What is the end goal </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.EndGoalList) { if (@item.ID == @Model.AboutYou.EndGoal) { @item.Value} }</textarea>
 
                                     </div>
@@ -205,51 +206,51 @@
                             <div class="card-body">
                                 <form class="form-material m-t-40">
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Do you have a company set up</h5>
+                                        <h5>Do you have a company set up</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.CompanySetupList) { if (@item.ID == @Model.Company.CompanySetup) { @item.Value} }</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What is the name of the company </h5>
+                                        <h5>What is the name of the company </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.CompanyName</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Have you got the domain name </h5>
+                                        <h5>Have you got the domain name </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.CompanySetupList) { if (@item.ID == @Model.Company.HaveGotDomain) { @item.Value} }</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> What is the domain </h5>
+                                        <h5>What is the domain </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.DomainName</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i>Have you got a co-founder</h5>
+                                        <h5>Have you got a co-founder</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.CofounderList) { if (@item.ID == @Model.Company.Cofounder) { @item.Value} }</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i>Have you got someone that can support technically</h5>
+                                        <h5>Have you got someone that can support technically</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.SupportTechnicallyList) { if (@item.ID == @Model.Company.SupportTechnically) { @item.Value} }</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i>Who is going to build it</h5>
+                                        <h5>Who is going to build it</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.BuildFromList) { if (@item.ID == @Model.Company.BuildFrom) { @item.Value} }</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i>Have you any thoughts on the brand that you want to create</h5>
+                                        <h5>Have you any thoughts on the brand that you want to create</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.BrandThought</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i>Think about company mission what could it be.</h5>
+                                        <h5>Think about company mission what could it be.</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.CompanyMission</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i>Think about look & feel, how will the user interact with the company.</h5>
+                                        <h5>Think about look & feel, how will the user interact with the company.</h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Company.CompanyLookFeel</textarea>
 
                                     </div>
@@ -276,20 +277,20 @@
                                             <label>What are you selling </label>
                                             @foreach (var item in ViewBag.MasterSelling)
                                             {
-                                                if (!Array.Exists(arraySellType, x => x == Convert.ToString(@item.ID)) == true)
+                                                if (Array.Exists(arraySellType, x => x == Convert.ToString(@item.ID)) == true)
                                                 {<div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
                                                         <label for="square-radio-disabled">@item.Value</label>
                                                     </div>
                                                 }
 
-                                                else
-                                                {
-                                                    <div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                                                        <label for="square-radio-disabled-checked">@item.Value</label>
-                                                    </div>
-                                                }
+                                                @*else
+                                                    {
+                                                        <div class="custom-control custom-checkbox">
+                                                            <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <label for="square-radio-disabled-checked">@item.Value</label>
+                                                        </div>
+                                                    }*@
 
 
 
@@ -298,7 +299,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Who is going to buy the product </h5>
+                                        <h5>Who is going to buy the product </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.ProductBuy</textarea>
 
                                     </div>
@@ -308,20 +309,20 @@
                                             <label>How would you like to charge </label>
                                             @foreach (var item in ViewBag.MasterCharge)
                                             {
-                                                if (!Array.Exists(arrayProductCharge, x => x == Convert.ToString(@item.ID)) == true)
+                                                if (Array.Exists(arrayProductCharge, x => x == Convert.ToString(@item.ID)) == true)
                                                 {<div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
                                                         <label for="square-radio-disabled">@item.Value</label>
                                                     </div>
                                                 }
 
-                                                else
-                                                {
-                                                    <div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                                                        <label for="square-radio-disabled-checked">@item.Value</label>
-                                                    </div>
-                                                }
+                                                @*else
+                                                    {
+                                                        <div class="custom-control custom-checkbox">
+                                                            <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <label for="square-radio-disabled-checked">@item.Value</label>
+                                                        </div>
+                                                    }*@
 
 
 
@@ -330,22 +331,22 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> How much are going to charge </h5>
+                                        <h5>How much are going to charge </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.ChargeGoing</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Who are you selling to </h5>
+                                        <h5>Who are you selling to </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.SellToList) { if (@item.ID == Convert.ToInt32(@Model.IdeaSelling.SellTo)) { @item.Value} }</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> How are you planning on finding customers </h5>
+                                        <h5>How are you planning on finding customers </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.CustomerFindPlan</textarea>
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Are you planning on taking on sales staff </h5>
+                                        <h5>Are you planning on taking on sales staff </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@foreach (var item in @ViewBag.SaleStaffPlanList) { if (@item.ID == @Model.IdeaSelling.SaleStaffPlan) { @item.Value} }</textarea>
 
                                     </div>
@@ -372,7 +373,7 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Can you afford that </h5>
+                                        <h5>Can you afford that </h5>
                                         <textarea id="Affort" name="Affort" class="form-control detailtextarea" oninput="auto_grow_idea_textarea(this)"> @Model.Money.Affort</textarea>
 
 
@@ -384,20 +385,20 @@
                                             <label>How are you planning to raise the money </label>
                                             @foreach (var item in ViewBag.MasterMoneyRasie)
                                             {
-                                                if (!Array.Exists(arrayMoneyRaisePlan, x => x == Convert.ToString(@item.ID)) == true)
+                                                if (Array.Exists(arrayMoneyRaisePlan, x => x == Convert.ToString(@item.ID)) == true)
                                                 {<div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
                                                         <label for="square-radio-disabled">@item.Value</label>
                                                     </div>
                                                 }
 
-                                                else
-                                                {
-                                                    <div class="custom-control custom-checkbox">
-                                                        <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
-                                                        <label for="square-radio-disabled-checked">@item.Value</label>
-                                                    </div>
-                                                }
+                                                @*else
+                                                    {
+                                                        <div class="custom-control custom-checkbox">
+                                                            <div class="iradio_square-blue checked disabled" style="position: relative;"><input type="radio" class="check" id="square-radio-disabled-checked" checked="" disabled="" data-radio="iradio_square-red" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                            <label for="square-radio-disabled-checked">@item.Value</label>
+                                                        </div>
+                                                    }*@
 
 
 
@@ -412,19 +413,19 @@
 
 
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> Can you make it profitable </h5>
+                                        <h5>Can you make it profitable </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly> @Model.Money.ProfitableMake</textarea>
 
                                     </div>
 
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> How are you planning on finding customers </h5>
+                                        <h5>How are you planning on finding customers </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.IdeaSelling.CustomerFindPlan</textarea>
 
                                     </div>
 
                                     <div class="form-group">
-                                        <h5>   <i class="ti-pencil-alt"></i> How long before you think you will be profitable </h5>
+                                        <h5>How long before you think you will be profitable </h5>
                                         <textarea class="form-control form-control-line detailtextarea" readonly>@Model.Money.ProfitableThinkTime</textarea>
 
                                     </div>
@@ -439,5 +440,14 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="col-5">
+        <div class="card-body">
+            <h4 class="card-title">Idea Percentage</h4>
+            <div>
+                <canvas id="chart-idea-progress" height="150"></canvas>
+            </div>
+        </div>
+    </div>
+
 </div>
