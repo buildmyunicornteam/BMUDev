@@ -75,7 +75,6 @@
                             <!-- Dark Logo icon -->
                             @*<img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />*@
                             <!-- Light Logo icon -->
-                    
                             @*<img src="assets/images/logo-light-iconn.png" alt="homepage" class="light-logo" />*@
                         </b>
                         <!--End Logo icon -->
@@ -373,52 +372,29 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="~/Dashboard" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a></li>
-                        <li class="nav-small-cap">--- MY IDEA</li>
-                        <li>
-                            <a class=" waves-effect waves-dark" href="~/idea" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Get the idea out of my head </span></a>
-                            <ul aria-expanded="false" class="collapse"></ul>
-                        </li>
-                        <li>
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-location-pin"></i><span class="hide-menu">Market Research</span></a>
+                        <li id="Dashboardnav"> <a class="waves-effect waves-dark" href="~/Dashboard" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a></li>
+                        @*<li class="nav-small-cap">--- MY IDEA</li>*@
+                        <li id="Ideanav">
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-lightbulb-on"></i><span class="hide-menu">My Idea</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="map-google.html">Validate Idea</a></li>
+                                <li> <a href="~/idea"> Get the idea out of my head</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li id="IdeaValidatenav">
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-comment-question-outline"></i><span class="hide-menu">Market Research</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="">Validate Idea</a></li>
+
 
                             </ul>
                         </li>
 
-                        @*<li class="nav-small-cap">--- Market Research</li>
-                            <li>
-                                <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Market Research</span></a>
-                                <ul aria-expanded="false" class="collapse"></ul>
-                            </li>*@
 
-                        @*<li class="nav-small-cap">--- THE  BUSINESS</li>*@
-
-                        @*<li>
-                                <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-media-right-alt"></i><span class="hide-menu">Company Setup</span></a>
-                                <ul aria-expanded="false" class="collapse"></ul>
-                            </li>
-                            <li>
-                                <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-media-right-alt"></i><span class="hide-menu">Business Plan</span></a>
-                                <ul aria-expanded="false" class="collapse"></ul>
-                            </li>
-                            <li>
-                                <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-pie-chart"></i><span class="hide-menu">Finanace</span></a>
-                                <ul aria-expanded="false" class="collapse"></ul>
-                            </li>
-
-                            <li>
-                                <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-light-bulb"></i><span class="hide-menu">Pitch Deck</span></a>
-                                <ul aria-expanded="false" class="collapse"></ul>
-                            </li>
-                            <li>
-                                <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-location-pin"></i><span class="hide-menu">Legal</span></a>
-                                <ul aria-expanded="false" class="collapse"></ul>
-                            </li>*@
-                        <li class="nav-small-cap">--- THE BUSINESS</li>
-                        <li>
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-location-pin"></i><span class="hide-menu">The Business</span></a>
+                        @*<li class="nav-small-cap">--- THE BUSINESS</li>*@
+                        <li id="Businessnav">
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-clipboard"></i><span class="hide-menu">The Business</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="map-google.html">Company Setup</a></li>
                                 <li><a href="map-vector.html">Business Plan</a></li>
@@ -428,8 +404,8 @@
                                 <li><a href="map-vector.html">Your Brand</a></li>
                             </ul>
                         </li>
-                        <li class="nav-small-cap">--- TECHNICAL</li>
-                        <li>
+                        @*<li class="nav-small-cap">--- TECHNICAL</li>*@
+                        <li id="Technicalnav">
                             <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-location-pin"></i><span class="hide-menu">Technical</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="map-google.html">On-line Presence</a></li>
@@ -440,9 +416,9 @@
 
                             </ul>
                         </li>
-                        <li class="nav-small-cap">--- OTHERS</li>
-                        <li>
-                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-location-pin"></i><span class="hide-menu">Raiseing Finance</span></a>
+                        @*<li class="nav-small-cap">--- OTHERS</li>*@
+                        <li id="Financenav">
+                            <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icons-Money-Bag"></i><span class="hide-menu">Raiseing Finance</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="map-google.html">Checklist</a></li>
                                 <li><a href="map-vector.html">Apply for Funding</a></li>
@@ -557,7 +533,7 @@
     <script src="~/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="~/assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
-    <script src="~/dist/js/custom.min.js"></script>
+
     @RenderSection("PageScript", required: false)
     <!-- icheck -->
     <script src="~/assets/node_modules/icheck/icheck.min.js"></script>
@@ -567,7 +543,7 @@
     <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider-init.js"></script>
     <script>
         $(document).ready(function () {
-            $(".ideatextarea").each(function () {
+            $(".detailtextarea").each(function () {
 
 
                 this.style.height = "5px";
@@ -581,6 +557,7 @@
             element.style.height = (element.scrollHeight) + "px";
         }
     </script>
+    <script src="~/dist/js/custom.min.js"></script>
 </body>
 
 </html>

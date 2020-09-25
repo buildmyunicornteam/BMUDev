@@ -23,6 +23,7 @@ namespace BuildMyUnicorn.Business_Layer
                 IdeaObj.TotalProgressData = Model.ProgressValue;
                 IdeaObj.YourIdeaProgressData = Model.IdeaExplain == null ? 0.00m : 100.00m;
                 IdeaObj.YourIdeaProgressData = Model.IdeaExplain == null ? 0.00m : 100.00m;
+                IdeaObj.YourIdeaProgressData = Math.Round(IdeaObj.YourIdeaProgressData);
                 //-- Let us break down idea
                 IdeaObj.IdeaBreakDownProgressData = Model.ProblemSolve == null ? 0.00m : 10.00m;
                 IdeaObj.IdeaBreakDownProgressData += Model.ProblemSolver == null ? 0.00m : 10.00m;
@@ -34,12 +35,14 @@ namespace BuildMyUnicorn.Business_Layer
                 IdeaObj.IdeaBreakDownProgressData += Model.ProductDemand == null ? 0.00m : 10.00m;
                 IdeaObj.IdeaBreakDownProgressData += Model.InMarketAlready == null ? 0.00m : 10.00m;
                 IdeaObj.IdeaBreakDownProgressData += Model.Scalable == null ? 0.00m : 10.00m;
+                IdeaObj.IdeaBreakDownProgressData = Math.Round(IdeaObj.IdeaBreakDownProgressData);
                 //-- About you
                 IdeaObj.AboutYouProgressData += Model.Entrepreneur == null ? 0.00m : 20.00m;
                 IdeaObj.AboutYouProgressData += Model.YearsDoing == null ? 0.00m : 20.00m;
                 IdeaObj.AboutYouProgressData += Model.Experience == null ? 0.00m : 20.00m;
                 IdeaObj.AboutYouProgressData += Model.Priorities == null ? 0.00m : 20.00m;
                 IdeaObj.AboutYouProgressData += Model.EndGoal == null ? 0.00m : 20.00m;
+                IdeaObj.AboutYouProgressData = Math.Round(IdeaObj.AboutYouProgressData);
                 //-- The Company
                 IdeaObj.CompanyProgressData += Model.CompanyName == null ? 0.00m : 10.00m;
                 IdeaObj.CompanyProgressData += Model.DomainName == null ? 0.00m : 10.00m;
@@ -51,6 +54,7 @@ namespace BuildMyUnicorn.Business_Layer
                 IdeaObj.CompanyProgressData += Model.Cofounder == null ? 0.00m : 10.00m;
                 IdeaObj.CompanyProgressData += Model.SupportTechnically == null ? 0.00m : 10.00m;
                 IdeaObj.CompanyProgressData += Model.BuildFrom == null ? 0.00m : 10.00m;
+                IdeaObj.CompanyProgressData = Math.Round(IdeaObj.CompanyProgressData);
                 //Selling The Idea
                 IdeaObj.IdeaSellingProgressData += Model.ProductBuy == null ? 0.00m : 14.28571m;
                 IdeaObj.IdeaSellingProgressData += Model.ChargeGoing == null ? 0.00m : 14.28571m;
@@ -66,6 +70,7 @@ namespace BuildMyUnicorn.Business_Layer
                 IdeaObj.MoneyProgressData += Model.ProfitableThinkTime == null ? 0.00m : 20.00m;
                 IdeaObj.MoneyProgressData += Model.BusinessCost == null ? 0.00m : 20.00m;
                 IdeaObj.MoneyProgressData += Model.MoneyRaisePlan == null ? 0.00m : 20.00m;
+                IdeaObj.MoneyProgressData = Math.Round(IdeaObj.MoneyProgressData);
             }
             return IdeaObj;
 
