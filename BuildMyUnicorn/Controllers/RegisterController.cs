@@ -113,7 +113,7 @@ namespace BuildMyUnicorn.Controllers
         public string AddCustomer(Client Model)
         {
 
-            return new ClientManager().AddNewCustomer(Model);
+            return new ClientManager().AddNewClient(Model);
 
         }
         public string SendPasswordResetLink(String Email)

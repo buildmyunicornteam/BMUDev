@@ -9,14 +9,14 @@ namespace Model_Layer.Helper
     public class ITextEvents : PdfPageEventHelper
     {
         //private DAL.AccountContext db = new DAL.AccountContext();
-        public Guid employee_id = Guid.Empty;
+        public Decimal ProgressValue = 0.00m;
 
-       // public ITextEvents(Guid employee_id)
-       // {
-           // this.employee_id = employee_id;
+        public ITextEvents(Decimal ProgressValue)
+        {
+            this.ProgressValue = ProgressValue;
 
 
-       // }
+        }
         // This is the contentbyte object of the writer
         PdfContentByte cb;
 
@@ -75,10 +75,11 @@ namespace Model_Layer.Helper
             iTextSharp.text.Font baseFontNormal = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 10f, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
             iTextSharp.text.Font SmallFont = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 8f, iTextSharp.text.Font.NORMAL, iTextSharp.text.BaseColor.BLACK);
             iTextSharp.text.Font baseFontBig = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 17f, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK);
-            var logo = iTextSharp.text.Image.GetInstance(HttpContext.Current.Server.MapPath("~/Content/download.png"));
+            var logo = iTextSharp.text.Image.GetInstance(HttpContext.Current.Server.MapPath("~/Content/images/logo.png"));
+            
             logo.SetAbsolutePosition(-10, -10);
 
-            Phrase heading1 = new Phrase("Heading One", baseFontBig);
+            Phrase heading1 = new Phrase("Get the idea out of my head", baseFontBig);
             heading1.Font.SetColor(60, 60, 60);
             //Phrase heading2 = new Phrase(Account.name.ToString(), baseFontNormal);
             // Phrase EmployeeName = new Phrase("[Name]: "+Account.name.ToString()+"", baseFontNormal);
@@ -112,7 +113,7 @@ namespace Model_Layer.Helper
                 float len = bf.GetWidthPoint(text, 8);
                 cb.AddTemplate(footerTemplate, document.PageSize.GetRight(100) + len, document.PageSize.GetBottom(30));
             }
-            string footertext = " WOW: WOW means working on Weekends like Saturday and Sunday.";
+            string footertext = "Date:-" + DateTime.Now;
             {
                 cb.BeginText();
                 cb.SetFontAndSize(bf, 8);
@@ -122,7 +123,7 @@ namespace Model_Layer.Helper
                 float len = bf.GetWidthPoint(footertext, 8);
                 cb.AddTemplate(footerTemplate, document.PageSize.GetLeft(40) + len, document.PageSize.GetBottom(30));
             }
-            string footertext2 = "WOH: WOH means working on Holidays like Eid, 26th Aug etc.";
+            string footertext2 = "";
             {
                 cb.BeginText();
                 cb.SetFontAndSize(bf, 8);
@@ -133,11 +134,11 @@ namespace Model_Layer.Helper
                 cb.AddTemplate(footerTemplate, document.PageSize.GetLeft(40) + len, document.PageSize.GetBottom(30));
             }
             PdfPCell pdfCellEmpty = new PdfPCell();
-            PdfPCell pdfHeaderCellDate = new PdfPCell(new Phrase("Name : " + "empty", baseFontNormal));
+            PdfPCell pdfHeaderCellDate = new PdfPCell(new Phrase("" + "", baseFontNormal));
             //  PdfPCell pdfHeaderCellDate = new PdfPCell(new Phrase("Date:" +PrintTime.ToShortDateString(), baseFontBig));
             //PdfPCell pdfHeaderCellh2 = new PdfPCell(heading2);
             PdfPCell pdfbarcode = new PdfPCell();
-            PdfPCell pdfHeaderCellTime = new PdfPCell(new Phrase("Date:" + "empty", baseFontNormal));
+            PdfPCell pdfHeaderCellTime = new PdfPCell(new Phrase("Fill up (%) = " + this.ProgressValue, baseFontNormal));
             //PdfPCell pdfHeaderCellTime = new PdfPCell(new Phrase("TIME:" + string.Format("{0:t}", DateTime.Now), baseFontBig));
 
 

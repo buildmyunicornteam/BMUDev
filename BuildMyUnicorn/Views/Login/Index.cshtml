@@ -21,7 +21,18 @@
     <!-- Custom CSS -->
     <link href="~/dist/css/style.min.css" rel="stylesheet">
     <link href="~/dist/css/custom-style.css" rel="stylesheet" />
-  
+  <style>
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+          -webkit-box-shadow: 0 0 0 30px #353b47 inset !important;
+      }
+      /*Change text in autofill textbox*/
+      input:-webkit-autofill {
+          -webkit-text-fill-color: #fff !important;
+      }
+  </style>
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +55,7 @@
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <section id="wrapper" class="login-register login-sidebar" style="background-image:url(./Content/assets/images/background/login-register.jpg);">
+    <section id="wrapper" class="login-register login-sidebar" style="background-image:url(../assets/images/background/login-register.jpg);">
         <div class="login-box card">
             <div class="card-body">
                 <form class="form-horizontal form-material text-center" id="loginform" >

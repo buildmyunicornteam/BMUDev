@@ -13,7 +13,7 @@ using System.Drawing;
 
 namespace BuildMyUnicorn.Controllers
 {
-    public class IdeaController : Controller
+    public class IdeaController : WebController
     {
         [Authorize]
         public ActionResult Index(string IdeaID)
@@ -104,10 +104,10 @@ namespace BuildMyUnicorn.Controllers
                     new BusinessCost { ID=1, Value="0 – 1000"},
                     new BusinessCost { ID=2, Value="1001-5000"},
                     new BusinessCost { ID=3, Value="5001- 10000"},
-                    new BusinessCost { ID=3, Value="10001 – 20000"},
-                    new BusinessCost { ID=3, Value="20001 – 50000"},
-                    new BusinessCost { ID=3, Value="50001 – 100000"},
-                    new BusinessCost { ID=3, Value="100000 +"}
+                    new BusinessCost { ID=4, Value="10001 – 20000"},
+                    new BusinessCost { ID=5, Value="20001 – 50000"},
+                    new BusinessCost { ID=6, Value="50001 – 100000"},
+                    new BusinessCost { ID=7, Value="100000 +"}
                 };
 
             ViewBag.MasterStartup = new Master().GetMasterByTableName(new Startup().TableName);
@@ -262,10 +262,10 @@ namespace BuildMyUnicorn.Controllers
                     new BusinessCost { ID=1, Value="0 – 1000"},
                     new BusinessCost { ID=2, Value="1001-5000"},
                     new BusinessCost { ID=3, Value="5001- 10000"},
-                    new BusinessCost { ID=3, Value="10001 – 20000"},
-                    new BusinessCost { ID=3, Value="20001 – 50000"},
-                    new BusinessCost { ID=3, Value="50001 – 100000"},
-                    new BusinessCost { ID=3, Value="100000 +"}
+                    new BusinessCost { ID=4, Value="10001 – 20000"},
+                    new BusinessCost { ID=5, Value="20001 – 50000"},
+                    new BusinessCost { ID=6, Value="50001 – 100000"},
+                    new BusinessCost { ID=7, Value="100000 +"}
                 };
 
             /// Temporary List
@@ -501,10 +501,10 @@ namespace BuildMyUnicorn.Controllers
                     new BusinessCost { ID=1, Value="0 – 1000"},
                     new BusinessCost { ID=2, Value="1001-5000"},
                     new BusinessCost { ID=3, Value="5001- 10000"},
-                    new BusinessCost { ID=3, Value="10001 – 20000"},
-                    new BusinessCost { ID=3, Value="20001 – 50000"},
-                    new BusinessCost { ID=3, Value="50001 – 100000"},
-                    new BusinessCost { ID=3, Value="100000 +"}
+                    new BusinessCost { ID=4, Value="10001 – 20000"},
+                    new BusinessCost { ID=5, Value="20001 – 50000"},
+                    new BusinessCost { ID=6, Value="50001 – 100000"},
+                    new BusinessCost { ID=7, Value="100000 +"}
                 };
 
             string fileName = string.Empty;
@@ -907,7 +907,7 @@ namespace BuildMyUnicorn.Controllers
 
 
                             TempText = null;
-                            Step3_Q = "3.5 " + "What is the end goal DROPDOWN?";
+                            Step3_Q = "3.5 " + "What is the end goal?";
                             foreach (var item in ViewBag.EndGoalList)
                             {
                                 if (item.ID == obj.AboutYou.EndGoal)

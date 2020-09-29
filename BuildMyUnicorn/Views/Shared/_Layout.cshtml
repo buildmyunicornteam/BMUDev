@@ -28,20 +28,42 @@
         .detailtextarea {
             resize: none;
             overflow: hidden;
-          //  min-height: 50px;
+            // min-height: 50px;
             //max-height: 100px;
         }
+
         .ideatextarea {
             resize: none;
             overflow: hidden;
             min-height: 200px;
             max-height: 1600px;
         }
+
         input:-internal-autofill-selected {
             appearance: menulist-button;
             background-color: none !important;
             background-image: none !important;
             color: -internal-light-dark(black, white) !important;
+        }
+
+        .scroll-sidebar {
+            // overflow-y: scroll !important;
+            // overflow-x: hidden !important;
+        }
+    </style>
+
+    <style>
+        .ps.ps--active-y > .ps__scrollbar-y-rail {
+            display: block;
+            background-color: red;
+        }
+
+        constructed stylesheet
+        .scroll-sidebar.ps .ps__scrollbar-y-rail {
+            left: 20px;
+            right: auto;
+            background: 0 0;
+            width: 6px;
         }
     </style>
 </head>
@@ -346,12 +368,12 @@
                 <!-- User Profile-->
                 <div class="user-profile">
                     <div class="user-pro-body">
-                        <div><img src="~/assets/images/users/2.jpg" alt="user-img" class="img-circle"></div>
+                        <div><img src="../Content/file_upload/@(ViewBag.Client.ImageID == null ? "profile-dummy.png" :  ViewBag.Client.ImageID)" alt="user-img" class="img-circle"></div>
                         <div class="dropdown">
-                            <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Steave Gection <span class="caret"></span></a>
+                            <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  @ViewBag.Client.FirstName  @ViewBag.Client.LastName  <span class="caret"></span></a>
                             <div class="dropdown-menu animated flipInY">
                                 <!-- text-->
-                                <a href="javascript:void(0)" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+                                <a href="/Profile?clientID=@ViewBag.Client.ClientID" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                                 <!-- text-->
                                 <a href="javascript:void(0)" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
                                 <!-- text-->
@@ -370,7 +392,7 @@
                     </div>
                 </div>
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
+                <nav class="sidebar-nav" id="">
                     <ul id="sidebarnav">
                         <li id="Dashboardnav"> <a class="waves-effect waves-dark" href="~/Dashboard" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a></li>
                         @*<li class="nav-small-cap">--- MY IDEA</li>*@
@@ -396,12 +418,15 @@
                         <li id="Businessnav">
                             <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-clipboard"></i><span class="hide-menu">The Business</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="map-google.html">Company Setup</a></li>
-                                <li><a href="map-vector.html">Business Plan</a></li>
-                                <li><a href="map-vector.html">Finanace</a></li>
-                                <li><a href="map-vector.html">Pitch</a></li>
-                                <li><a href="map-vector.html">Legal</a></li>
-                                <li><a href="map-vector.html">Your Brand</a></li>
+
+                                <li><a href="#">Company Setup</a></li>
+                                <li><a href="#">Business Plan</a></li>
+                                <li><a href="#">Finanace</a></li>
+                                <li><a href="#">Pitch</a></li>
+                                <li><a href="#">Legal</a></li>
+                                <li><a href="#">Your Brand</a></li>
+                                <li id="Teamnav"><a href="~/Team">Team</a></li>
+
                             </ul>
                         </li>
                         @*<li class="nav-small-cap">--- TECHNICAL</li>*@
@@ -519,7 +544,7 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="~/assets/node_modules/popper/popper.min.js"></script>
     <script src="~/assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -541,8 +566,14 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
     <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider-init.js"></script>
+    <script src="~/dist/js/perfect-scrollbar.jquery.min.js"></script>
+
+    <script src="~/dist/js/custom.min.js"></script>
+
     <script>
+       $('#scroll-sidebar').perfectScrollbar();
         $(document).ready(function () {
+          
             $(".detailtextarea").each(function () {
 
 
@@ -556,8 +587,8 @@
             element.style.height = "5px";
             element.style.height = (element.scrollHeight) + "px";
         }
+
     </script>
-    <script src="~/dist/js/custom.min.js"></script>
 </body>
 
 </html>

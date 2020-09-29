@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace BuildMyUnicorn.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : WebController
     {
         public ActionResult Index()
         {

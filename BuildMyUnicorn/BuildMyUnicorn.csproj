@@ -163,7 +163,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IdeaController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3985,9 +3988,12 @@
     <Content Include="Content\app_script\page_script\login.js" />
     <Content Include="Content\app_script\page_script\shared.js" />
     <Content Include="Content\app_script\page_script\signup.js" />
+    <Content Include="Content\app_script\page_script\team.js" />
     <Content Include="Content\app_script\parsley.js" />
     <Content Include="Content\app_script\tstfile.js" />
     <Content Include="Content\app_script\_notes\dwsync.xml" />
+    <Content Include="Content\file_upload\help-icon.png" />
+    <Content Include="Content\file_upload\profile-image.png" />
     <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\bell.png" />
     <Content Include="Content\images\buil-my-unicorn-logo.png" />
@@ -4132,6 +4138,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Web\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -6074,6 +6082,7 @@
     <Content Include="assets\node_modules\kendoui\styles\kendo.silver.mobile.min.css.map" />
     <Content Include="assets\node_modules\kendoui\styles\kendo.uniform.min.css.map" />
     <Content Include="assets\node_modules\kendoui\styles\kendo.uniform.mobile.min.css.map" />
+    <Content Include="Content\file_upload\dummy-profile.webp" />
     <None Include="packages.config" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Idea\Index.cshtml" />
@@ -6092,6 +6101,11 @@
     <Content Include="Views\Idea\_DetailIdeaPartial.cshtml" />
     <Content Include="Simple-Plain-Bar-Chart-Plugin-With-jQuery-barCharts\LICENSE" />
     <Content Include="Simple-Plain-Bar-Chart-Plugin-With-jQuery-barCharts\README.md" />
+    <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Team\_DialogAddTeamPartial.cshtml" />
+    <Content Include="Views\Team\Create.cshtml" />
+    <Content Include="Views\Team\Edit.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\node_modules\kendoui\typescript\kendo.all.d.ts" />

@@ -4,12 +4,14 @@ using Model_Layer.Models;
 
 namespace BuildMyUnicorn.Controllers
 {
-    [Authorize]
-    public class DashboardController : Controller
+   
+    public class DashboardController : WebController
     {
         // GET: Dashboard
         public ActionResult Index()
         {
+            
+           
             return View();
         }
 

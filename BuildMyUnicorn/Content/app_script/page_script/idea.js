@@ -225,7 +225,7 @@ $(".validation-wizard").steps({
                         button: "Close!",
                     });
 
-
+                setTimeout(function () { window.location.replace(GetBaseURL() + "Idea"); }, 2000);
             },
             success: function (response) {
                 alert(response);

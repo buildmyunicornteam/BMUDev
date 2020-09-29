@@ -13,7 +13,7 @@ namespace BuildMyUnicorn.Business_Layer
 {
     public class ClientManager
     {
-        public string AddNewCustomer(Client Model)
+        public string AddNewClient(Client Model)
         {
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
             List<ParametersCollection> parameters = new List<ParametersCollection>() {
@@ -67,12 +67,81 @@ namespace BuildMyUnicorn.Business_Layer
             }
         }
 
+        public string AddClientTeam(ClientTeam Model)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() {
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@RoleInCompany", ParamterValue = Model.RoleInCompany, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@FirstName", ParamterValue = Model.FirstName, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@LastName", ParamterValue = Model.LastName, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@Email", ParamterValue = Model.Email, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@Phone", ParamterValue = Model.Phone, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ImageID", ParamterValue = Model.ImageID, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@LinkedProfile", ParamterValue = Model.LinkedProfile, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ShortBio", ParamterValue = Model.ShortBio, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@CountryID", ParamterValue = Model.CountryID, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input }
+                
+            };
+            int result = obj.ExecuteWithReturnValue(CommandType.StoredProcedure, "sp_add_client_team", parameters);
+            return result > 0 ? "OK" : "Error in Adding Team"; 
+          
+           
+        }
+
         public Client GetClient(int ClientID)
         {
             DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
             List<ParametersCollection> parameters = new List<ParametersCollection>() { new ParametersCollection { ParamterName = "@ClientID", ParamterValue = ClientID, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input } };
             return obj.GetSingle<Client>(CommandType.StoredProcedure, "sp_get_client_by_id", parameters);
         }
+
+        public IEnumerable<ClientTeam> GetClientTeam()
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() { new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input } };
+            return obj.GetList<ClientTeam>(CommandType.StoredProcedure, "sp_get_client_team", parameters);
+        }
+
+        public string UpdateClientProfile(Client Model)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() {
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@RoleInCompany", ParamterValue = Model.RoleInCompany, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ImageID", ParamterValue = Model.ImageID, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@LinkedProfile", ParamterValue = Model.LinkedProfile, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ShortBio", ParamterValue = Model.ShortBio, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input }
+            };
+            int result = obj.ExecuteWithReturnValue(CommandType.StoredProcedure, "sp_update_client_profile", parameters);
+            return result > 0 ? "OK" : "Error in Adding Team";
+
+
+        }
+
+        public string UpdateClientTeam(ClientTeam Model)
+        {
+            DataLayer obj = new DataLayer(ConfigurationManager.ConnectionStrings["ConnectionBuildMyUnicorn"].ConnectionString, Convert.ToInt32(ConfigurationManager.AppSettings["CommandTimeOut"]));
+            List<ParametersCollection> parameters = new List<ParametersCollection>() {
+                new ParametersCollection { ParamterName = "@ClientID", ParamterValue = Model.ClientID, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@RoleInCompany", ParamterValue = Model.RoleInCompany, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@FirstName", ParamterValue = Model.FirstName, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@LastName", ParamterValue = Model.LastName, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@Email", ParamterValue = Model.Email, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@Phone", ParamterValue = Model.Phone, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ImageID", ParamterValue = Model.ImageID, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@LinkedProfile", ParamterValue = Model.LinkedProfile, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ShortBio", ParamterValue = Model.ShortBio, ParamterType = DbType.String, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@CountryID", ParamterValue = Model.CountryID, ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input },
+                new ParametersCollection { ParamterName = "@ModifiedBy", ParamterValue = Convert.ToInt16(HttpContext.Current.User.Identity.Name), ParamterType = DbType.Int32, ParameterDirection = ParameterDirection.Input }
+
+            };
+            int result = obj.ExecuteWithReturnValue(CommandType.StoredProcedure, "sp_update_client_team", parameters);
+            return result > 0 ? "OK" : "Error in Adding Team";
+
+
+        }
+
 
         public string UpdateCustomerPassword(Client Model)
         {

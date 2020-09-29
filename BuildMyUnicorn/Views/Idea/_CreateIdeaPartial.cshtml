@@ -196,7 +196,8 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="wint1">What is the name of the company</label>
-                                    <textarea class='form-control ideatextarea progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" oninput="auto_grow_idea_textarea(this)">  @Model.Company.CompanyName</textarea>
+                                    <input type="text" class='form-control  progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" value="@Model.Company.CompanyName"/>
+                                    @*<textarea class='form-control ideatextarea progress-required @( Model.Company.CompanyName != null ? "progress-percent" :"")' id="CompanyName" name="CompanyName" oninput="auto_grow_idea_textarea(this)">  @Model.Company.CompanyName</textarea>*@
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -211,7 +212,8 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="wint1">What is the domain</label>
-                                    <textarea class='form-control ideatextarea progress-required @( Model.Company.DomainName != null ? "progress-percent" :"")' id="DomainName" name="DomainName" oninput="auto_grow_idea_textarea(this)">  @Model.Company.DomainName </textarea>
+                                    <input type="text" class='form-control  progress-required @( Model.Company.DomainName != null ? "progress-percent" :"")' id="DomainName" name="DomainName">
+                                    @*<textarea class='form-control ideatextarea progress-required @( Model.Company.DomainName != null ? "progress-percent" :"")' id="DomainName" name="DomainName" oninput="auto_grow_idea_textarea(this)">  @Model.Company.DomainName </textarea>*@
                                 </div>
                             </div>
                             <div class="col-md-12">
