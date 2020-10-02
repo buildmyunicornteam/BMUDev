@@ -12,12 +12,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>Build My Unicorn - Dashboard</title>
     <link href="~/assets/node_modules/icheck/skins/all.css" rel="stylesheet">
-    <link href="~/assets/node_modules/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet">
-    <link href="~/assets/node_modules/ion-rangeslider/css/ion.rangeSlider.skinModern.css" rel="stylesheet">
-    @RenderSection("PageStyle", required: false)
+        <link href="~/assets/node_modules/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet">
+        <link href="~/assets/node_modules/ion-rangeslider/css/ion.rangeSlider.skinModern.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="~/dist/css/style.min.css" rel="stylesheet">
     <link href="~/dist/css/pages/form-icheck.css" rel="stylesheet">
+    @RenderSection("PageStyle", required: false)
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -407,6 +408,7 @@
                         <li id="IdeaValidatenav">
                             <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-comment-question-outline"></i><span class="hide-menu">Market Research</span></a>
                             <ul aria-expanded="false" class="collapse">
+                                <li><a href="~/Questionnaire">Questionnaire</a></li>
                                 <li><a href="">Validate Idea</a></li>
 
 
@@ -418,14 +420,14 @@
                         <li id="Businessnav">
                             <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-clipboard"></i><span class="hide-menu">The Business</span></a>
                             <ul aria-expanded="false" class="collapse">
-
+                                <li id="Teamnav"><a href="~/Team">Team</a></li>
                                 <li><a href="#">Company Setup</a></li>
                                 <li><a href="#">Business Plan</a></li>
                                 <li><a href="#">Finanace</a></li>
                                 <li><a href="#">Pitch</a></li>
                                 <li><a href="#">Legal</a></li>
                                 <li><a href="#">Your Brand</a></li>
-                                <li id="Teamnav"><a href="~/Team">Team</a></li>
+
 
                             </ul>
                         </li>
@@ -532,7 +534,11 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            © 2020 Eliteadmin by themedesigner.in
+            <button class="btn btn-circle btn-secondary"><i class="fab fa-facebook-f"></i></button>
+            <button class="btn btn-circle btn-secondary"><i class="fab fa-twitter"></i></button>
+            <button class="btn btn-circle btn-secondary"><i class="fab fa-linkedin"></i></button>
+            <button class="btn btn-circle btn-secondary"><i class="fab fa-youtube"></i></button>
+
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
@@ -558,22 +564,20 @@
     <script src="~/assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="~/assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
-
-    @RenderSection("PageScript", required: false)
     <!-- icheck -->
     <script src="~/assets/node_modules/icheck/icheck.min.js"></script>
-    <script src="~/assets/node_modules/icheck/icheck.init.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
-    <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider-init.js"></script>
-    <script src="~/dist/js/perfect-scrollbar.jquery.min.js"></script>
+        <script src="~/assets/node_modules/icheck/icheck.init.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+        <script src="~/assets/node_modules/ion-rangeslider/js/ion-rangeSlider/ion.rangeSlider-init.js"></script>
+        <script src="~/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/dist/js/custom.js"></script>
 
-    <script src="~/dist/js/custom.min.js"></script>
-
+    @RenderSection("PageScript", required: false)
     <script>
-       $('#scroll-sidebar').perfectScrollbar();
+        $('#scroll-sidebar').perfectScrollbar();
         $(document).ready(function () {
-          
+
             $(".detailtextarea").each(function () {
 
 

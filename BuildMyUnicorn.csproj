@@ -164,6 +164,8 @@
     <Compile Include="Controllers\IdeaController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\QuestController.cs" />
+    <Compile Include="Controllers\QuestionnaireController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\WebController.cs" />
@@ -3986,6 +3988,7 @@
     <Content Include="Content\app_script\page_script\global.js" />
     <Content Include="Content\app_script\page_script\idea.js" />
     <Content Include="Content\app_script\page_script\login.js" />
+    <Content Include="Content\app_script\page_script\questionnaire.js" />
     <Content Include="Content\app_script\page_script\shared.js" />
     <Content Include="Content\app_script\page_script\signup.js" />
     <Content Include="Content\app_script\page_script\team.js" />
@@ -6106,6 +6109,8 @@
     <Content Include="Views\Team\Create.cshtml" />
     <Content Include="Views\Team\Edit.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Questionnaire\Index.cshtml" />
+    <Content Include="Views\Quest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="assets\node_modules\kendoui\typescript\kendo.all.d.ts" />

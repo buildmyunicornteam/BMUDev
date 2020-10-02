@@ -32,9 +32,9 @@
                 <form class="form-material m-t-40">
 
                     <div class="form-group">
-                        @{ var arrayStartupType = String.IsNullOrEmpty(@Model.IdeaBreakDown.StartupType) == false ? @Model.IdeaBreakDown.StartupTechnology.Split(',').ToArray() : new string[0]; }
-                        <label>What technology will this start-up use </label>
-                        @foreach (var item in ViewBag.MasterTechnology)
+                        @{ var arrayStartupType = String.IsNullOrEmpty(@Model.IdeaBreakDown.StartupType) == false ? @Model.IdeaBreakDown.StartupType.Split(',').ToArray() : new string[0]; }
+                        <label>What type of start-up is it </label>
+                        @foreach (var item in ViewBag.MasterStartup)
                         {
                             if (Array.Exists(arrayStartupType, x => x == Convert.ToString(@item.ID)) == true)
                             {<div class="custom-checkbox">

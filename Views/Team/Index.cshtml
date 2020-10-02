@@ -49,12 +49,12 @@
 
             </ol>
             &nbsp;&nbsp;
-            <a href="" class="btn btn-info return jsSubmit"  data-toggle="modal" data-target="#dialogClientUpdate" >Add New </a>
+            <a href="" class="btn btn-info return jsSubmit" data-toggle="modal" data-target="#dialogClientUpdate">Add New </a>
             @*<a href="~/Team/Create" class="btn btn-info return jsSubmit">Add New </a>*@
             @*<button type="button" class="btn btn-info btn-rounded m-t-10 float-right"
-                data-toggle="modal" data-target="#add-contact">
-            Add New Team
-        </button>*@
+                        data-toggle="modal" data-target="#add-contact">
+                    Add New Team
+                </button>*@
         </div>
     </div>
 </div>
@@ -71,27 +71,20 @@
                     </div>
                     <div class="col-md-8 col-lg-9">
                         <h3 class="box-title m-b-0">@item.FirstName  @item.LastName </h3>
-                        @{ var arrayRoles = String.IsNullOrEmpty(item.RoleInCompany) == false ? item.RoleInCompany.Split(',').ToArray() : new string[0]; }
-
-                        @foreach (var role in ViewBag.Role)
-                        {
-                            if (Array.Exists(arrayRoles, x => x == Convert.ToString(@role.ID)) == true)
+                        @{ var arrayRoles = String.IsNullOrEmpty(item.RoleInCompany) == false ? item.RoleInCompany.Split(',').ToArray() : new string[0];
+                                List<string> roleArray = new List<string>();
+                            }
+                            @foreach (var role in ViewBag.Role)
                             {
-                                <small>@role.Value, </small>
+                                if (Array.Exists(arrayRoles, x => x == Convert.ToString(@role.ID)) == true)
+                                {
+                                    roleArray.Add(@role.Value);
+                                }
                             }
                         
-
-
-
-
-                        }
-
-                      
+                         @string.Join(", ", roleArray.ToArray())
+                       
                         <address>
-
-
-
-
                             <abbr title="Phone"><i class="fas fa-phone-square"></i></abbr> @item.Phone
                             <br />
                             <i class="icons-Email"></i> @item.Email

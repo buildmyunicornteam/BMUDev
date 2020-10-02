@@ -207,25 +207,25 @@ $(".validation-wizard").steps({
             dataType: "json",
 
             error: function (response) {
-                if (ActionType == "UPDATE")
-                    swal({
-                        title: "Success!",
-                        text: "Idea Submitted Successfuly!",
-                        icon: "success",
-                        button: "Close!",
-                    });
+                //if (ActionType == "UPDATE")
+                //    swal({
+                //        title: "Success!",
+                //        text: "Idea Submitted Successfuly!",
+                //        icon: "success",
+                //        button: "Close!",
+                //    });
 
 
-                else
+                //else
 
-                    swal({
-                        title: "Success!",
-                        text: "Idea Updated Successfuly!",
-                        icon: "success",
-                        button: "Close!",
-                    });
+                //    swal({
+                //        title: "Success!",
+                //        text: "Idea Updated Successfuly!",
+                //        icon: "success",
+                //        button: "Close!",
+                //    });
 
-                setTimeout(function () { window.location.replace(GetBaseURL() + "Idea"); }, 2000);
+                setTimeout(function () { window.location.replace(GetBaseURL() + "Idea"); }, 1000);
             },
             success: function (response) {
                 alert(response);
